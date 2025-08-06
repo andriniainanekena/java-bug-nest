@@ -1,6 +1,6 @@
 package employee_management;
 
-public class FullTimeEmployee {
+public class FullTimeEmployee implements Employee {
     private int employeeId;
     private String name;
     private double monthlySalary;
@@ -11,10 +11,12 @@ public class FullTimeEmployee {
         setMonthlySalary(monthlySalary);
     }
 
+    @Override
     public int getEmployeeId() {
         return employeeId;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -24,15 +26,15 @@ public class FullTimeEmployee {
     }
 
     public void setMonthlySalary(double monthlySalary) {
-    if (monthlySalary < 0) {
-        this.monthlySalary = 0;
-    } else {
-        this.monthlySalary = monthlySalary;
+        if (monthlySalary < 0) {
+            this.monthlySalary = 0;
+        } else {
+            this.monthlySalary = monthlySalary;
+        }
     }
-}
 
+    @Override
     public double calculatePay() {
         return monthlySalary;
     }
 }
-
