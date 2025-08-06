@@ -1,17 +1,41 @@
 package employee_management;
 
 public class PartTimeEmployee {
-    public int employeeId;
-    public String name;
-    public double hoursWorked;
-    public double hourlyRate;
+    private int employeeId;
+    private String name;
+    private double hoursWorked;
+    private double hourlyRate;
 
 
     public PartTimeEmployee(int employeeId, String name, double hoursWorked, double hourlyRate) {
         this.employeeId = employeeId;
         this.name = name;
-        this.hoursWorked = hoursWorked;
-        this.hourlyRate = hourlyRate;
+        if (hoursWorked < 0) {
+            this.hoursWorked = 0;
+        } else {
+            this.hoursWorked = hoursWorked;
+        }
+        if(hourlyRate < 0) {
+            this.hourlyRate = 0;
+        } else {
+            this.hourlyRate = hourlyRate;
+        }
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public double getHourlyRate() {
+        return hourlyRate;
     }
 
     public double calculatePay() {
